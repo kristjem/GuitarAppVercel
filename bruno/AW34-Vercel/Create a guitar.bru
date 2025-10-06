@@ -1,0 +1,29 @@
+meta {
+  name: Create a guitar
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{BASE_URL}}/guitars
+  body: json
+  auth: inherit
+}
+
+headers {
+  Authorization: Bearer {{accessToken}}
+}
+
+body:json {
+  {
+    "year": "2020-01-01 00:00:00",
+    "price": 5500,
+    "brandId": "2",
+    "modelId": "2",
+    "colorId": "2"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

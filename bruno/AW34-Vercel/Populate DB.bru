@@ -1,0 +1,19 @@
+meta {
+  name: Populate DB
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{BASE_URL}}/populate
+  body: none
+  auth: inherit
+}
+
+headers {
+  : 
+}
+
+settings {
+  encodeUrl: true
+}

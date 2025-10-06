@@ -1,0 +1,19 @@
+meta {
+  name: List all guitars
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{BASE_URL}}/guitars
+  body: none
+  auth: inherit
+}
+
+headers {
+  Authorization: Bearer {{accessToken}}
+}
+
+settings {
+  encodeUrl: true
+}
