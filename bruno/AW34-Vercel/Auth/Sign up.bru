@@ -1,0 +1,27 @@
+meta {
+  name: Sign up
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{BASE_URL}}/signup
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "email": "admin@example.com",
+    "password": "1234"
+  }
+}
+
+script:post-response {
+  let token = res.body.data.token
+  bru.setEnvVar("accessToken", token)
+}
+
+settings {
+  encodeUrl: true
+}

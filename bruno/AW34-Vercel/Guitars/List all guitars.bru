@@ -1,17 +1,13 @@
 meta {
-  name: Get a guitar
+  name: List all guitars
   type: http
-  seq: 5
+  seq: 3
 }
 
 get {
-  url: {{BASE_URL}}/guitars/:id
+  url: {{BASE_URL}}/guitars
   body: none
   auth: inherit
-}
-
-params:path {
-  id: 1
 }
 
 headers {
