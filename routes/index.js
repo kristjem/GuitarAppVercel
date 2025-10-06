@@ -16,6 +16,13 @@ router.post("/signup", async (req, res, next) => {
     const userEmail = req.body.email;
     const userPassword = req.body.password;
 
+    const existingUser = await userService.getOne(userEmail);
+
+    if (existingUser) {
+        const error = new Error("You already have an account! Login instead.");
+        return next(error);
+    }
+
     userService.create(userEmail, userPassword)
     let token;
     try {
