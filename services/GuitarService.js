@@ -17,6 +17,14 @@ class GuitarService {
 		});
 	}
 
+	async delete(guitarId) {
+		return this.Guitar.destroy({
+			where: {
+				id: guitarId,
+			},
+		});
+	}
+
 	async get() {
 		return this.Guitar.findAll({
 			where: {},
